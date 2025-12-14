@@ -76,6 +76,14 @@ variable "input_value_1"{
     type=number
 }
 
+output "input_value_1"{
+    value= var.input_value_1
+}
+
 # any
 
 variable "input_value_2"{}
+
+output "input_value_2"{
+    value=var.input_value_2
+}
