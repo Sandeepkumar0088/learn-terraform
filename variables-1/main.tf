@@ -33,6 +33,6 @@ variable "enabled" {
     default = true
 }
 
-output "enabled"{
-    value=var.enabled
+output "enabled" {
+    value = var.enabled
 }
