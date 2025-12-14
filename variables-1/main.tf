@@ -53,6 +53,8 @@ output "list_of_instances"{
     value=var.list_of_instances
 }
 
+# map
+
 variable "map" {
     type = map
     default = {
@@ -62,4 +64,8 @@ variable "map" {
         d="list",
         e="map"
     }
+}
+
+output "map"{
+    value=var.map
 }
