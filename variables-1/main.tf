@@ -25,5 +25,5 @@ output "instance_count_1" {
 }
 
 output "instance_count_merge" {
-    value = ${var.instance_count}.${var.instance_count+11}
+    value = "${var.instance_count}.${var.instance_count+11}"
 }
