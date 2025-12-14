@@ -27,3 +27,12 @@ output "instance_count_1" {
 output "instance_count_merge" {
     value = "${var.instance_count}.${var.instance_count+11}"
 }
+
+variable "enabled" {
+    type = bool
+    default = true
+}
+
+output "enabled"{
+    value=var.enabled
+}
