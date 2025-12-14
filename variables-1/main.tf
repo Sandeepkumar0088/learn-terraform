@@ -52,3 +52,14 @@ variable "list_of_instances" {
 output "list_of_instances"{
     value=var.list_of_instances
 }
+
+variable "map" {
+    type = map
+    default = {
+        a="string",
+        b=54,
+        c=true,
+        d="list",
+        e="map"
+    }
+}
