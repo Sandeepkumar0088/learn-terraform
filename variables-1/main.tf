@@ -55,7 +55,7 @@ output "list_of_instances"{
 
 # map
 
-variable "map" {
+variable "maping" {
     type = map
     default = {
         a="string",
@@ -66,6 +66,6 @@ variable "map" {
     }
 }
 
-output "map"{
-    value=var.map
+output "maping"{
+    value=var.maping
 }
