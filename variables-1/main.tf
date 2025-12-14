@@ -69,3 +69,13 @@ variable "maping" {
 output "maping"{
     value=var.maping
 }
+
+# input value
+
+variable "input_value_1"{
+    type=number
+}
+
+# any
+
+variable "input_value_2"{}
