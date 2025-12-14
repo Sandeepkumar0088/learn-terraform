@@ -7,6 +7,6 @@ output "env" {
     value = var.env
 }
 
-output "env" {
+output "env123" {
     value = "${var.env}123"
 }
