@@ -7,5 +7,5 @@ data "aws_ami" "ami" {
 }
 
 output "d_s" {
-    values   =   aws_ami.ami.ami
+    value   =   aws_ami.ami.ami
 }
