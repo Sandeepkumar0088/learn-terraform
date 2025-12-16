@@ -1,4 +1,4 @@
-module "" {
+module "calculator" {
     source = "./calculator"
     a      = var.a
     b      = var.b
