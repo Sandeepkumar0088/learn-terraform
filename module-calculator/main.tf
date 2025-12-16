@@ -4,6 +4,11 @@ module "calculator" {
     b      = var.b
 }
 
+module "file-writer"{
+    source = "./file-writer"
+    sum    = module.calculator.sum
+}
+
 variable "a" {
     default = 10
 }
