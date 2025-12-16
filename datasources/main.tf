@@ -6,9 +6,9 @@ data "aws_ami" "ami" {
     owners = [ "973714476881" ]
 }
 
-output "d_s" {
-    value   =   data.aws_ami.ami
-}
+# output "d_s" {
+#     value   =   data.aws_ami.ami
+# }
 
 data "aws_security_group" "selected" {
     filter {
