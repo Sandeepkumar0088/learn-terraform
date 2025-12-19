@@ -17,5 +17,5 @@ locals {
 }
 
 output "prices" {
-    value = locals.fruit_prices
+    value = local.fruit_prices
 }
