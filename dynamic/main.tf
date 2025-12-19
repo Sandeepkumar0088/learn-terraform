@@ -4,17 +4,17 @@ resource "aws_security_group" "ex1" {
 
     egress {
         from_port       = 22
-        to_port         = 22
-        protocol        ="tcp"
+        to_port      = 22
+         protocol        ="tcp"
         cidr_blocks     = ["0.0.0.0/0"]
     }
 
 
     ingress {
         from_port       = 22
-        to_port         = 22
+      to_port            = 22
         protocol        = "tcp"
-        cidr_blocks     = ["0.0.0.0/0"]
+           cidr_blocks     = ["0.0.0.0/0"]
     }
     ingress {
         from_port       = 33
@@ -23,10 +23,10 @@ resource "aws_security_group" "ex1" {
         cidr_blocks     = ["0.0.0.0/0"]
     }
     ingress {
-        from_port       = 44
-        to_port         = 44
+        from_port           = 44
+        to_port          = 44
         protocol        = "tcp"
-        cidr_blocks     = ["0.0.0.0/0"]
+    cidr_blocks     = ["0.0.0.0/0"]
     }
 
 
@@ -35,7 +35,7 @@ resource "aws_security_group" "ex1" {
 variable "ports" {
     default= {
         ssh             = 3333
-        web             = 6666
+        web             6666
         mon             = 9999
     }
 }
