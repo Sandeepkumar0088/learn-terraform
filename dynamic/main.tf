@@ -35,7 +35,7 @@ resource "aws_security_group" "ex1" {
 variable "ports" {
     default= {
         ssh             = 3333
-        web             6666
+        web            = 6666
         mon             = 9999
     }
 }
