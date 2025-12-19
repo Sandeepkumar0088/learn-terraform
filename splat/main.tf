@@ -11,7 +11,7 @@ output "no" {
 }
 
 variable "fruits" {
-    default = [
+    default = {
         apple = {
             price= 100
         },
@@ -21,8 +21,8 @@ variable "fruits" {
         citrus = {
             price = 300
         }
-        ]
     }
+}
 
 output "fruit_prices" {
     value = {for x,y in var.fruits:x=>y.price}
