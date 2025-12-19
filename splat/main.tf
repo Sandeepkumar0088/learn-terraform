@@ -14,10 +14,10 @@ variable "fruits" {
     default = [
         apple = {
             price= 100
-        }
+        },
         banana = {
             price = 200
-        }
+        },
         citrus = {
             price = 300
         }
