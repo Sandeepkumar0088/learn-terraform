@@ -2,4 +2,6 @@ variable "speed" {
     type=number
 }
 
-var.speed>60? "Too Speed" : "Low Speed"
+output "speed"{
+    value = var.speed>60? "Too High" : "Too Low"
+}
