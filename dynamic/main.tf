@@ -40,7 +40,7 @@ variable "ports" {
     }
 }
 resource "aws_security_group" "ex2" {
-    name                = "allow_tls"
+    name                = "allow_all_dynamic_block"
     description         = "allow tls inbound traffic and all outbound traffic"
 
     egress {
