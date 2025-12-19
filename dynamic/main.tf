@@ -1,6 +1,6 @@
-resource "aws_security_group" "ex" {
-    name            = "allow_tls"
-    description     = "allow tls inbound traffic and all outbound traffic"
+resource "aws_security_group" "ex1" {
+    name                = "allow_tls"
+    description         = "allow tls inbound traffic and all outbound traffic"
 
     egress {
         from_port       = 22
@@ -8,29 +8,55 @@ resource "aws_security_group" "ex" {
         protocol        ="tcp"
         cidr_blocks     = ["0.0.0.0/0"]
     }
+
+
     ingress {
         from_port       = 22
         to_port         = 22
-        protocol        ="tcp"
+        protocol        = "tcp"
         cidr_blocks     = ["0.0.0.0/0"]
     }
     ingress {
-        from_port       = 1010
-        to_port         = 1010
-        protocol        ="tcp"
+        from_port       = 33
+        to_port         = 33
+        protocol        = "tcp"
         cidr_blocks     = ["0.0.0.0/0"]
     }
     ingress {
-        from_port       = 0088
-        to_port         = 0088
-        protocol        ="tcp"
+        from_port       = 44
+        to_port         = 44
+        protocol        = "tcp"
         cidr_blocks     = ["0.0.0.0/0"]
     }
-    ingress {
-        from_port       = 2392
-        to_port         = 2392
+
+
+}
+
+variable "ports" {
+    default= {
+        ssh             = 3333
+        web             = 6666
+        mon             = 9999
+    }
+}
+resource "aws_security_group" "ex2" {
+    name                = "allow_tls"
+    description         = "allow tls inbound traffic and all outbound traffic"
+
+    egress {
+        from_port       = 11
+        to_port         = 11
         protocol        ="tcp"
         cidr_blocks     = ["0.0.0.0/0"]
     }
 
+    dynamic "ingress" {
+        for_each = var.ports
+        content {
+            from_port   = ingress.value
+            to_port     = ingress.value
+            protocol    = "tcp"
+            cidr_blocks = ["0.0.0.0/0"]
+        }
+    }
 }
