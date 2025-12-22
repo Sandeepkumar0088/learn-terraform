@@ -12,7 +12,7 @@ variable "zone_id" {
 }
 variable "components" {
   default = [
-    "frontend" ,
-    "backend"
+    "login" ,
+    "logout"
   ]
 }
