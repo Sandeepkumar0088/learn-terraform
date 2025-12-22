@@ -12,11 +12,16 @@ variable "zone_id" {
 }
 variable "components" {
   default = {
-    frontend = ""
-    mongodb = ""
+    frontend  = ""
+    mongodb   = ""
     catalogue = ""
-    redis = ""
-    user = ""
-    cart = ""
+    redis     = ""
+    user      = ""
+    cart      = ""
+    mysql     = ""
+    shipping  = ""
+    rabbitmq  = ""
+    payment   = ""
+    dispatch  = ""
   }
 }
