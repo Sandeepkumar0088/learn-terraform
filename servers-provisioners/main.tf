@@ -9,8 +9,7 @@ resource "aws_instance" "main" {
     Name                  = "${each.key}"
   }
 
-  provisioner "remote_exec" {
-    for_each    = var.components
+  provisioner "remote-exec" {
 
     connection {
       type      = "ssh"
