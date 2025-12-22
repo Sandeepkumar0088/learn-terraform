@@ -10,9 +10,6 @@ variable "vpc_security_group_ids" {
 variable "zone_id" {
   default = "Z09354891N46GVLJSDZH0"
 }
-# variable "components" {
-#   default = {
-#     frontend  = ""
-#     backend   = ""
-#   }
-# }
+variable "components" {
+  default = [ frontend, backend ]
+}
