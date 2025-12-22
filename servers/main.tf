@@ -1,7 +1,7 @@
 resource "aws_instance" "frontend" {
   ami                     = "ami-09c813fb71547fc4f"
   instance_type           = "t3.micro"
-  vpc_security_group_ids  = ["allow-all"]
+  vpc_security_group_ids  = ["sg-039df2e97e51ebc17"]
 
   tags = {
     Name                  = "frontend"
@@ -19,7 +19,7 @@ resource "aws_route53_record" "frontend" {
 resource "aws_instance" "backend" {
   ami                     = "ami-09c813fb71547fc4f"
   instance_type           = "t3.micro"
-  vpc_security_group_ids  = ["allow-all"]
+  vpc_security_group_ids  = ["sg-039df2e97e51ebc17"]
 
   tags = {
     Name                  = "backend"
