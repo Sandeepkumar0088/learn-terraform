@@ -6,7 +6,7 @@ resource "aws_instance" "main" {
   vpc_security_group_ids  = var.vpc_security_group_ids
 
   tags = {
-    Name                  = "${each.key}"
+    Name                  = each.key
   }
 
   provisioner "remote-exec" {
@@ -21,7 +21,7 @@ resource "aws_instance" "main" {
     inline = [
       "sudo dnf install python3.13-pip -y",
       "sudo pip3.13 install ansible",
-      "ansible-pull -i localhost, -U https://github.com/Sandeepkumar0088/roboshop-ansible-roles-v2.git main.yml -e component=${each.key} -e env=dev"
+      "ansible-pull -i localhost, -U https://github.com/Sandeepkumar0088/roboshop-ansible-roles-v2.git main.yml -e component=${each.key}"
     ]
   }
 
