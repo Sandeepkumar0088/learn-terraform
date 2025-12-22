@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
-resource "aws_route53_record" "dns_record" {
+resource "aws_route53_record" "frontend" {
   zone_id                 = "Z09354891N46GVLJSDZH0"
   name                    = "frontend-dev"
   type                    = "A"
@@ -26,7 +26,7 @@ resource "aws_instance" "backend" {
   }
 }
 
-resource "aws_route53_record" "dns_record" {
+resource "aws_route53_record" "backend" {
   zone_id                 = "Z09354891N46GVLJSDZH0"
   name                    = "${aws_instance.backend.tags["Name"]}-dev"
   type                    = "A"
