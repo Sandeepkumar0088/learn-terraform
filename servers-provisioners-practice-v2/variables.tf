@@ -11,7 +11,7 @@ variable "ami" {
 }
 
 variable "zone_id" {
-  default = ""
+  default = "Z09354891N46GVLJSDZH0"
 }
 
 variable "components"  {
