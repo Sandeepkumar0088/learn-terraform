@@ -3,7 +3,7 @@ variable "sub" {}
 variable "mul" {}
 variable "div" {}
 
-resource "local_file" "madhu"{
+resource "local_file" "mad"{
   content = <<EOF
   ${var.sum}
   ${var.sub}
