@@ -11,9 +11,4 @@ resource "local_file" "mad"{
   ${var.div}
   EOF
   filename= "/tmp/a.out"
-  lifecycle {
-    ignore_changes = [
-      content
-    ]
-  }
 }
