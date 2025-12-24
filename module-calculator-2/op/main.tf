@@ -11,4 +11,9 @@ resource "local_file" "madhu"{
   ${var.div}
   EOF
   filename= "/tmp/a.out"
+  lifecycle {
+    ignore_changes = [
+      content
+    ]
+  }
 }
