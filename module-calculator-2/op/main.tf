@@ -5,10 +5,10 @@ variable "div" {}
 
 resource "local_file" "foo"{
   content = <<EOF
-  var.sum
-  var.sub
-  var.mul
-  var.div
+  ${var.sum}
+  ${var.sub}
+  ${var.mul}
+  ${var.div}
   EOF
   filename= "/tmp/a.out"
 }
