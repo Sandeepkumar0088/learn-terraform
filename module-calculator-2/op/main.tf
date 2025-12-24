@@ -4,6 +4,11 @@ variable "mul" {}
 variable "div" {}
 
 resource "local_file" "foo"{
-  content = var.sum
+  content = <<EOF
+  var.sum
+  var.sub
+  var.mul
+  var.div
+  EOF
   filename= "/tmp/a.out"
 }
