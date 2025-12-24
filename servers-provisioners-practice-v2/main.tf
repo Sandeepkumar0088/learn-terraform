@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    null = {
-      source  = "hashicorp/null"
-      version = "3.2.4"
-    }
-  }
-}
 resource "aws_instance" "server" {
   for_each                = var.components
   ami                     = var.ami
@@ -38,8 +30,9 @@ resource "null_resource" "terraform" {
       type = "ssh"
       user = "ec2-user"
       password = "DevOps321"
-      host = "${aws_instance.server[each.key].private_ip}"
+      host = aws_instance.server[each.key].private_ip
     }
+
     inline = [
       "sudo dnf install python3.13-pip -y",
       "sudo pip3.13 install ansible",
