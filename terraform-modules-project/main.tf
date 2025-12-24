@@ -11,6 +11,7 @@ module "ec2" {
   ami= var.ami
   instance_type = var.instance_type
   vpc_id = module.sec-grp.vpc_id
+  components = var.components
 }
 
 module "sec-grp" {
