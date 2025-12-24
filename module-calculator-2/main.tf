@@ -31,8 +31,8 @@ module "op" {
 }
 
 variable "a" {
-  default = 15
+  type= number
 }
 variable "b" {
-  default = 3
+  type = number
 }
