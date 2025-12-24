@@ -5,10 +5,10 @@ variable "div" {}
 
 resource "local_file" "foo"{
   content = {
-    addition = "SUM = ${var.sum}"
-    Subtraction = "SUB = ${var.sub}"
-    Multiplication = "MUL = ${var.mul}"
-    Division = "DIV = ${var.div}"
+    addition = var.sum
+    Subtraction = var.sub
+    Multiplication = var.mul
+    Division = var.div
   }
   filename= "/tmp/a.out"
 }
