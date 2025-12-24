@@ -22,6 +22,13 @@ module "sum" {
   b       = var.b
 }
 
+module "op" {
+  source = "./op"
+  sum    = module.sum.addition
+  sub    = module.sub.subtraction
+  mul    = module.multiply.multiplication
+  div    = module.division.division
+}
 
 variable "a" {
   default = 15

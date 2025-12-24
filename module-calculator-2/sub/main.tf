@@ -3,5 +3,5 @@ variable "a" {}
 variable "b" {}
 
 output "subtraction" {
-  value = "addition = ${(var.a)-(var.b)}"
+  value = "subtraction = ${(var.a)-(var.b)}"
 }
