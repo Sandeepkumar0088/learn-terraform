@@ -1,4 +1,4 @@
-bucket        = "terraform-sandeepkumar0088"
+bucket        = "terraform-sandeep0088"
 key           = "sandeep/terraform.tfstate"
 region        = "us-east-1"
 use_lockfile  = true
