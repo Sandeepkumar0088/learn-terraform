@@ -21,3 +21,13 @@ module "ec2" {
 module "sec-grp" {
   source = "./sec-grp"
 }
+
+module "ansible" {
+  source = "./ansible"
+  depends_on = [ module.dns,module.ec2 ]
+
+  for_each   = var.components
+  component = each.key
+  private_ip = module.ec2[each.key].instance.private_ip
+  env = var.env
+}
