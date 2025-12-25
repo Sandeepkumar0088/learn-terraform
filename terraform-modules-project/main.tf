@@ -1,17 +1,21 @@
 module "dns" {
   source = "./dns"
+  for_each = var.components
+
   zone_id = var.zone_id
-  private_ip = module.ec2.server
-  components = var.components
+  private_ip = module.ec2[each.key].instance.private_ip
+  component = each.key
   env = var.env
 }
 
 module "ec2" {
   source = "./ec2"
+  for_each = var.components
+
   ami= var.ami
   instance_type = var.instance_type
   vpc_id = module.sec-grp.vpc_id
-  components = var.components
+  component = each.key
 }
 
 module "sec-grp" {
