@@ -3,7 +3,7 @@ resource "aws_instance" "server" {
 
   ami           = var.ami
   instance_type = each.value["instance_type"]
-  vpc_security_group_ids = [aws_security_group.sec.id]
+  vpc_security_group_ids = [aws_security_group.sec[each.key].id]
   tags = {
     Name        = each.key
   }
