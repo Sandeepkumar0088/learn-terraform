@@ -1,7 +1,7 @@
 module "dns" {
   source = "./dns"
   zone_id = var.zone_id
-  private_ip = module.ec2.private_ip
+  private_ip = module.ec2.server
   components = var.components
   env = var.env
 }

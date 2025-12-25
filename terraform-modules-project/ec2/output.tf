@@ -1,3 +1,3 @@
-output "private_ip" {
+output "server" {
   value = aws_instance.server.private_ip
 }
