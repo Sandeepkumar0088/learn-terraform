@@ -9,7 +9,7 @@ git:## git pull nd clean local terraform.tfstate
 help:
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST)
 
-dev-apply: git ## terraform dev-apply
+dev-apply: git
 	terraform init -backend-config=env-dev/state.tfvars
 	terraform apply -auto-approve -var-file=env-dev/main.tfvars
 
