@@ -24,7 +24,7 @@ module "sec-grp" {
 
 module "ansible" {
   source = "./ansible"
-  depends_on = [ module.dns,module.ec2 ]
+  depends_on = [ module.dns ]
 
   for_each   = var.components
   component = each.key
