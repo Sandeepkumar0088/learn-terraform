@@ -2,14 +2,14 @@
 
 .DEFAULT_GOAL := help
 
-git:## git pull nd clean local terraform.tfstate
+git: ## git pull nd clean local terraform.tfstate
 	git pull
 	rm -f .terraform/terraform.tfstate
 
 help:
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST)
 
-dev-apply: git
+dev-apply: git ## terraform dev-apply
 	terraform init -backend-config=env-dev/state.tfvars
 	terraform apply -auto-approve -var-file=env-dev/main.tfvars
 
