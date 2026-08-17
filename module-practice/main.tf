@@ -17,11 +17,11 @@ module "output" {
 }
 
 variable "a" {
-  default = 10
+  default = 20
 }
 
 variable "b" {
-  default = 20
+  default = 10
 }
 
 
