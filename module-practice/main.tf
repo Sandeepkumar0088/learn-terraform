@@ -24,6 +24,4 @@ variable "b" {
   default = 20
 }
 
-sum = module.addition.sum
-sub = module.subtraction.sub
 
